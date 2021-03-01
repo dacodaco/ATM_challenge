@@ -1,39 +1,30 @@
 import Foundation
 
 class ATM {
-    var spareMoney: Int = 0
+    var key = 0
     
-    func checkCardOrCash() {
-        
+    func checkPassword(password: Int) {
+        key = password
     }
-    
-    func selectMeny() {
-        
-    }
-    
-    func inputPassword() {
-        
-    }
-    
-    func balanceCheck(_ amount: Int) {
-        
-    }
-    
 }
+var atm = ATM()
+atm.checkPassword(password: 1111)
 
 class User {
-    var money: Int = 0
+    var name: String = ""
+    var key: Int = 0
     
-    func userMoney(name: String, spare: Int) {
-        print("\(name)  \(spare)만원")
+    func checkIn(id: String, password: Int) {
+        name = id
+        key = password
     }
-    
 }
 
-var userMoney: User = User()
-userMoney.userMoney(name: "Coda", spare: 50)
+var coda = User()
+coda.checkIn(id: "coda", password: 1111)
 
-var userSpareMoney: ATM = ATM() // 기계가 유저의 잔액을 확인한다
+if atm.key == coda.key {
+    print("비밀번호가 일치합니다. 로그인합니다.")
+}
 
-userSpareMoney // 통잔 잔액 + 입력 금액 = 입금 금액
-userSpareMoney // 통잔잔액 - 입력 금액 = 출금 금액
+
